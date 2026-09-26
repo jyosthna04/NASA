@@ -1,0 +1,154 @@
+/* ===== NASA Explorer styles ===== */
+
+/* Full-height dark space background */
+.app {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background: radial-gradient(circle at bottom, #0b1026 0%, #05060f 100%);
+  overflow: hidden;
+}
+
+/* Decorative star layer created with box-shadow dots */
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  /* Many small white dots spread across the screen */
+  box-shadow:
+    50px 100px #fff, 120px 200px #fff, 200px 50px #fff, 300px 300px #fff,
+    400px 120px #fff, 500px 400px #fff, 600px 80px #fff, 700px 250px #fff,
+    800px 350px #fff, 900px 150px #fff, 1000px 420px #fff, 1100px 90px #fff,
+    150px 500px #fff, 350px 600px #fff, 550px 550px #fff, 750px 620px #fff,
+    950px 580px #fff, 250px 700px #fff, 650px 750px #fff, 1050px 680px #fff,
+    80px 800px #fff, 430px 820px #fff, 850px 780px #fff, 1150px 720px #fff,
+    20px 300px #fff, 220px 460px #fff, 480px 220px #fff, 680px 520px #fff,
+    880px 640px #fff, 1080px 300px #fff, 1180px 540px #fff, 180px 360px #fff,
+    380px 740px #fff, 580px 280px #fff, 780px 460px #fff, 980px 700px #fff;
+  animation: twinkle 4s infinite alternate;
+  z-index: 0;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.4; }
+  to   { opacity: 1; }
+}
+
+/* Centered content on top of the star layer */
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  color: #a9b4d4;
+  margin: 0 0 2rem;
+}
+
+/* Main action button */
+.get-button {
+  padding: 0.85rem 2rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #1e57f5 0%, #0066cc 100%);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  box-shadow: 0 6px 20px rgba(30, 87, 245, 0.4);
+}
+
+.get-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(30, 87, 245, 0.55);
+}
+
+.get-button:active {
+  transform: translateY(0);
+  opacity: 0.9;
+}
+
+/* Status messages */
+.status {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  color: #a9b4d4;
+}
+
+.error {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.12);
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+}
+
+/* ===== APOD card ===== */
+.card {
+  margin-top: 2rem;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 1.25rem;
+  text-align: left;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.apod-image {
+  width: 100%;
+  max-height: 520px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.apod-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 1rem 0 0.25rem;
+}
+
+.apod-date {
+  font-size: 0.95rem;
+  color: #8b95b8;
+  margin: 0 0 1rem;
+}
+
+.apod-explanation {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #c8d0e8;
+  margin: 0;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .heading { font-size: 2rem; }
+  .subtitle { font-size: 1rem; }
+  .apod-title { font-size: 1.25rem; }
+  .content { padding: 2rem 1rem; }
+}
